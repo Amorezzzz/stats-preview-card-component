@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 0.5px solid white;
+    /* border: 0.5px solid white; */
 }
 
 :root{
@@ -27,32 +27,38 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width:100vw ;
 }
 
 
 .container{
     display: flex;
-    border-radius: 10px;
+    align-items: stretch;
+    justify-content: center;
+    border-radius: 1rem;
     overflow: hidden;
-    width:60%;
-    height: 50%;
-    
+    max-width: 1140px;
+    /* width:70%; */
+    /* height: 55%; */
+    background:var(--card-background);
 }
 
 .left-side{
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    gap: 2rem;
-    flex: 1;
+    justify-content:space-between;
+    padding: 6%;
+    /* gap: 2rem; */
+    /* flex: 1 0 50%; */
 }
 
 .image-container{
-    flex: 1;
+    display: flex;
+    flex: 0 1 50%;
+    flex-shrink: 0;
     position: relative;
     
 }
+
 .image-container::after{
     content:'';
     position: absolute;
@@ -61,12 +67,64 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.19;
 }
 
+/* dont forget to use some filter to make image little bit more darker  */
 .image-container img{
     width: 100%;
     height: 100%;
+    mix-blend-mode: multiply;
+}
+
+
+
+/* .left-down{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap:5em;
+    
+    
+} */
+
+
+.header{
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    letter-spacing: 0.6px;
+}
+.header span{
+    color: var(--accent);
+}
+
+.middle-content{
+    font-family: var(--font-rest);
+    font-weight: 100;
+    color: var(--main-paragraph);
+    line-height: 1.8rem;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.left-down{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.upside{
+    font-family: var(--font-rest);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--main-paragraph); 
+}
+
+.downside{
+    font-family: var(--font-rest);
+    font-size: 0.7rem;
+    color: var(--main-paragraph); 
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 0.5rem;
 }
 
 
